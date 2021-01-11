@@ -9,9 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
-    List<Customer> findByLastName(String lastName);
-
-    Customer findById(long id);
-
     List<Customer> findAll();
 }
