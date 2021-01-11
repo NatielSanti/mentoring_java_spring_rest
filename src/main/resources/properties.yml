@@ -1,11 +1,14 @@
 spring:
   datasource:
-    url: 'jdbc:h2:file:/data'
-    driverClassName: 'org.h2.Driver'
-    username: 'sa'
-    password: 'password'
+#    url: 'jdbc:h2:file:/data'
+    platform: 'postgres'
+    url: 'jdbc:postgresql://45.76.32.22:5432/postgres'
+    driverClassName: 'org.postgresql.Driver'
+    username: 'postgres'
+    password: 'moscow2020'
   jpa:
-    database-platform: 'org.hibernate.dialect.H2Dialect'
-  h2:
-    console:
-      enabled: true
+    database: 'POSTGRESQL'
+    database-platform: 'org.hibernate.dialect.PostgreSQL9Dialect'
+#  h2:
+#    console:
+#      enabled: true

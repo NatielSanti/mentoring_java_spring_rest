@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.BodyDataDTO;
 import com.example.demo.dto.CustomerDTO;
 import com.example.demo.service.DataService;
 import org.springframework.web.bind.annotation.*;
@@ -31,14 +30,6 @@ public class RestController {
     @RequestMapping(value = "/all", method = {RequestMethod.GET})
     private List<CustomerDTO> getAll(){
         return new ArrayList<>();
-    }
-
-    @PostMapping("/add/old")
-    private BodyDataDTO oldPost(@RequestBody BodyDataDTO data){
-        System.out.println("POST! Second");
-        System.out.println("Data is " + data.getStr() + " " + data.getI());
-        dataService.method();
-        return new BodyDataDTO();
     }
 
 }

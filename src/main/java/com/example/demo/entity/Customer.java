@@ -1,22 +1,23 @@
 package com.example.demo.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "CUSTOMER")
 public class Customer {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq")
+    @SequenceGenerator(name = "users_seq", sequenceName = "seq_customer", allocationSize = 10)
+    @Column(name = "id", updatable = false, nullable = false)
     private Long id;
     private String firstName;
     private String lastName;
 
-    public Customer() {}
+    public Customer() {
+    }
 
-    public Customer(String firstName, String lastName) {
+    public Customer(Long id, String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
