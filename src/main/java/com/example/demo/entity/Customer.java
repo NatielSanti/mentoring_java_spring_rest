@@ -8,7 +8,7 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq")
-    @SequenceGenerator(name = "users_seq", sequenceName = "seq_customer", allocationSize = 10)
+    @SequenceGenerator(name = "users_seq", sequenceName = "seq_customer", allocationSize = 1)
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
     private String firstName;
